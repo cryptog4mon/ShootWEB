@@ -1,0 +1,193 @@
+.policy-page {
+  min-height: 100vh;
+  padding: 140px 0 100px;
+  background: var(--bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.policy-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grid-bg);
+  background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size), var(--grid-tile) var(--grid-tile), var(--grid-tile) var(--grid-tile);
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  opacity: var(--grid-opacity);
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+}
+
+.policy-glow {
+  position: absolute;
+  top: -220px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.policy-container {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+}
+
+.policy-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+  padding: 12px 0 0;
+  border-radius: 0;
+  background: none;
+  border: none;
+  align-items: center;
+}
+
+.policy-header h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.policy-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.policy-chip {
+  font-size: 12px;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.policy-chip:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.policy-block {
+  padding: 26px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(14px);
+}
+
+.policy-block h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  position: relative;
+  padding-left: 12px;
+}
+
+.policy-block h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--accent-green);
+}
+
+.policy-block h3 {
+  font-size: 14px;
+  margin: 12px 0 6px;
+  color: var(--text-primary);
+}
+
+.policy-block h4 {
+  font-size: 13px;
+  margin: 10px 0 6px;
+  color: var(--text-primary);
+}
+
+.policy-block p {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.policy-block ul {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.policy-block li {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+[data-theme="light"] .policy-header h1 {
+  color: #111;
+}
+
+[data-theme="light"] .policy-block h2,
+[data-theme="light"] .policy-block h3,
+[data-theme="light"] .policy-block h4 {
+  color: #111;
+}
+
+
+[data-theme="light"] .policy-chip {
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .policy-chip:hover {
+  color: #111;
+  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .policy-page::before {
+  opacity: var(--grid-opacity);
+  mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+}
+
+[data-theme="light"] .policy-block {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .policy-header {
+    padding: 16px;
+  }
+
+  .policy-block {
+    padding: 20px;
+  }
+}

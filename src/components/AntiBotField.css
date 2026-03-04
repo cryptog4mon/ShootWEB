@@ -1,0 +1,139 @@
+/* AntiBot Field Styles - integrates with existing form styles */
+.antibot-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.antibot-icon {
+  color: #d4af37;
+  flex-shrink: 0;
+}
+
+.antibot-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.antibot-input:focus {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.antibot-input.verifying {
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.antibot-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.antibot-hint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  gap: 8px;
+}
+
+.antibot-hint small {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+}
+
+.attempts-hint {
+  color: rgba(212, 175, 55, 0.8) !important;
+  font-weight: 500;
+}
+
+/* Verified state styles */
+.verified-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #22c55e !important;
+  font-weight: 600;
+}
+
+.verified-icon {
+  color: #22c55e;
+}
+
+.input-wrap.verified {
+  position: relative;
+}
+
+.verified-input {
+  width: 100%;
+  background: rgba(34, 197, 94, 0.1) !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+  color: #22c55e !important;
+  font-weight: 600;
+  cursor: default;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .antibot-input {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+[data-theme="dark"] .antibot-input:focus {
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+[data-theme="dark"] .antibot-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .antibot-label {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="light"] .antibot-input {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+[data-theme="light"] .antibot-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .antibot-hint small {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] .attempts-hint {
+  color: #b8860b !important;
+}
+
+[data-theme="light"] .antibot-icon {
+  color: #b8860b;
+}
+
+[data-theme="light"] .verified-label {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .verified-icon {
+  color: #16a34a;
+}
+
+[data-theme="light"] .verified-input {
+  background: rgba(34, 197, 94, 0.1) !important;
+  border-color: rgba(34, 197, 94, 0.3) !important;
+  color: #16a34a !important;
+}

@@ -1,0 +1,245 @@
+.antibot-container {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.antibot-container:hover {
+  border-color: rgba(212, 175, 55, 0.3);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+}
+
+.antibot-container.verified {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.antibot-container.locked {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.antibot-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #d4af37;
+}
+
+.antibot-icon {
+  margin-right: 8px;
+}
+
+.antibot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.antibot-challenge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.challenge-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.challenge-icon {
+  color: #d4af37;
+}
+
+.challenge-question {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.antibot-input {
+  position: relative;
+}
+
+.answer-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.answer-input:focus {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.answer-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.answer-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.antibot-button {
+  background: linear-gradient(135deg, #d4af37, #f4e4bc);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.antibot-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.antibot-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.antibot-info {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+}
+
+.antibot-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.success-icon {
+  color: #22c55e;
+}
+
+.antibot-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.error-icon {
+  color: #ef4444;
+}
+
+.retry-button {
+  background: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: rgba(239, 68, 68, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .antibot-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .answer-input {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+[data-theme="dark"] .answer-input:focus {
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .antibot-container {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+[data-theme="light"] .challenge-label {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme="light"] .challenge-question {
+  background: rgba(212, 175, 55, 0.1);
+  color: #000;
+}
+
+[data-theme="light"] .answer-input {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+[data-theme="light"] .answer-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] .antibot-info {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] .antibot-header {
+  color: #b8860b;
+}
+
+[data-theme="light"] .antibot-timer {
+  background: rgba(212, 175, 55, 0.2);
+  color: #b8860b;
+}
+
+[data-theme="light"] .challenge-icon {
+  color: #b8860b;
+}
+
+[data-theme="light"] .antibot-button {
+  background: linear-gradient(135deg, #b8860b, #d4af37);
+  color: #fff;
+}

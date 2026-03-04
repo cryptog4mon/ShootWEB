@@ -1,0 +1,32 @@
+﻿.products-page {
+  min-height: 100vh;
+  position: relative;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.products-bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--grid-bg);
+  background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size), var(--grid-tile) var(--grid-tile), var(--grid-tile) var(--grid-tile);
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  opacity: var(--grid-opacity);
+  z-index: 0;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
+}
+
+[data-theme="light"] .products-bg {
+  opacity: var(--grid-opacity);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 100%);
+}
+
+.products-page .pricing-section {
+  padding-top: 20px;
+}
+
+.products-page .pricing-bg-grid {
+  display: none;
+}

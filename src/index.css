@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+
+:root {
+  --bg-color: #050505;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --accent-green: #d4af37;
+  --accent-green-dim: rgba(212, 175, 55, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-main: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --grid-opacity: 0.24;
+  --grid-size: 28px;
+  --grid-tile: calc(var(--grid-size) * 2);
+  --grid-line-color: rgba(255, 255, 255, 0.035);
+  --grid-tile-color: rgba(255, 255, 255, 0.02);
+  --grid-bg:
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-tile-color) 50%, transparent 50%),
+    linear-gradient(var(--grid-tile-color) 50%, transparent 50%);
+}
+
+[data-theme="light"] {
+  --bg-color: #f7f4ec;
+  --text-primary: #121212;
+  --text-secondary: #5c5c5c;
+  --accent-green: #c79a2b;
+  --accent-green-dim: rgba(199, 154, 43, 0.18);
+  --glass-bg: rgba(0, 0, 0, 0.04);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --grid-opacity: 0.28;
+  --grid-line-color: rgba(0, 0, 0, 0.08);
+  --grid-tile-color: rgba(0, 0, 0, 0.035);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  scrollbar-color: #0a0a0a #040404;
+  scrollbar-width: thin;
+  zoom: 1;
+}
+
+@supports not (zoom: 1) {
+  html,
+  body {
+    transform: none;
+    transform-origin: top center;
+    width: auto;
+  }
+}
+
+html,
+body,
+.navbar,
+.nav-capsule,
+.footer,
+.glass-panel,
+.lang-capsule,
+.login-link,
+.nav-item,
+.btn-hero-primary,
+.btn-hero-secondary,
+.logo-text,
+.logo-image,
+.features,
+.pricing-section,
+.profile-page,
+.tickets-page,
+.faq,
+.hero,
+.tickets-card,
+.tickets-panel,
+.profile-left,
+.profile-list,
+.profile-activation,
+.pricing-card,
+.feature-text {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+[data-theme="light"] body {
+  scrollbar-color: #c1b59a #f2ede2;
+}
+
+body.no-scroll,
+html.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #fff, var(--text-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-glow {
+  box-shadow: 0 0 20px var(--accent-green-dim);
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  animation: blurFade 0.3s ease-out;
+}
+
+.badge-icon {
+  width: 12px;
+  height: 12px;
+  opacity: 0.85;
+  flex: 0 0 auto;
+  display: block;
+}
+
+@keyframes blurFade {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #040404;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #0a0a0a;
+  border-radius: 999px;
+  border: 2px solid #040404;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #141414;
+}
+
+[data-theme="light"] *::-webkit-scrollbar-track {
+  background: #f2ede2;
+}
+
+[data-theme="light"] *::-webkit-scrollbar-thumb {
+  background: #c1b59a;
+  border: 2px solid #f2ede2;
+}
+
+[data-theme="light"] *::-webkit-scrollbar-thumb:hover {
+  background: #b3a483;
+}
